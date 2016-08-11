@@ -1,0 +1,28 @@
+/******** BASE STYLES *******/
+$dark-brown: #8B5D33;
+$light-brown: #91785D;
+
+body {
+    background-color: $dark-lime;
+    color: $light-lime;
+    font-size: $main-font-size;
+    display: flex;
+    justify-content: center;
+    font-family: $font-stack;
+    min-width: 330px;
+}
+
+/******* MAIN STYLES *******/
+#app-container {
+    background-color: $light-brown;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+/******* PSEUDO STYLES *******/
+
+/******* MEDIA QUERIES *******/
