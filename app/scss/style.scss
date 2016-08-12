@@ -1,10 +1,15 @@
 /******** BASE STYLES *******/
-$dark-brown: #8B5D33;
-$light-brown: #91785D;
+$pearl-aqua: #7AE7C7;
+$green-sheen: #75BBA7;
+$slate-gray: #6C809A;
+$deep-taupe: #795663;
+$umber: #645244;
+$font-stack: 'Source Sans Pro', Helvetica, sans-serif;
+$main-font-size: 1.2em;
 
 body {
-    background-color: $dark-lime;
-    color: $light-lime;
+    background-color: $deep-taupe;
+    color: $green-sheen;
     font-size: $main-font-size;
     display: flex;
     justify-content: center;
@@ -14,13 +19,33 @@ body {
 
 /******* MAIN STYLES *******/
 #app-container {
-    background-color: $light-brown;
-    width: 40%;
+    background-color: $slate-gray;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 5%;
+}
+// .search-block {
+//     margin: 2% 0;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     color: $light-lime;
+//     background-color: $light-brown;
+// }
+#search-box {
+    background-color: $slate-gray;
+    color: $green-sheen;
+    margin: 0 auto 5%;
+    border-radius: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 2% 3%;
 }
 
 /******* PSEUDO STYLES *******/
