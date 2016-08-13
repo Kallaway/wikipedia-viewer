@@ -27,15 +27,15 @@ body {
     flex-direction: column;
     margin-bottom: 5%;
 }
-// .search-block {
-//     margin: 2% 0;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-//     align-items: center;
-//     color: $light-lime;
-//     background-color: $light-brown;
-// }
+.search-panel {
+    margin: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // color: $light-lime;
+    // background-color: $light-brown;
+}
 #search-box {
     background-color: $slate-gray;
     color: $green-sheen;
@@ -46,6 +46,19 @@ body {
     outline: none;
     border: none;
     padding: 2% 3%;
+}
+#search-button {
+    margin: 5% 0;
+    max-width: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: $slate-gray;
+    color: $green-sheen;
+    border-radius: 15px;
+    padding: 2% 5%;
+}
+#search-button:hover {
+    color: $deep-taupe;
 }
 
 /******* PSEUDO STYLES *******/
