@@ -7,32 +7,37 @@ function handleJSONP(data) {
 };
 
 function buildResults(data) {
-	data.forEach(function(result) {
-		let resultsBox = $('#results');
-		let container = $('<div></div>').addClass('entry');
-		let link = $('<a></a>').addClass('res-link');
-		let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
-		let resText = $('<p></p>').addClass('res-info').html(result.snippet);
-		console.log(result.snippet);
-		console.log(resText);
+	let timeoutIncr = 100;
 
-		// let test = $
-		link.append(resTitle);
-		link.append(resText);
-		container.append(resTitle);
-		resultsBox.append(container);
-	});
+	setTimeout(function() {
+		data.forEach(function(result) {
+
+			console.log(result);
+
+			let resultsBox = $('#results');
+			let container = $('<div></div>').addClass('entry');
+			let link = $('<a></a>').addClass('res-link');
+			let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
+			let resText = $('<p></p>').addClass('res-info').html(result.snippet);
+			console.log(result.snippet);
+			console.log(resText);
+
+			// let test = $
+			link.append(resTitle);
+			link.append(resText);
+			container.append(link);
+			resultsBox.append(container);
+
+			timeoutIncr += 100;
+		});
+	}, timeoutIncr);
+
+
 }
 
 
 
 $(document).ready(function(){
-
-
-
-
-
-
 
 	// constants
 	const $resultsEl = $('#results'),
