@@ -1,5 +1,9 @@
 "use strict";
 
+// On focus on search box - empty the input
+// Put button on the same line
+// Make results appear one by one
+
 function handleJSONP(data) {
 	let results = data.query.search;
 	buildResults(results);
@@ -9,14 +13,26 @@ function handleJSONP(data) {
 function buildResults(data) {
 	let timeoutIncr = 100;
 
+	function urlSpaceReplacer() {
+		return "_";
+	}
+
 	setTimeout(function() {
 		data.forEach(function(result) {
 
 			console.log(result);
 
+			let urlQuery = result.title;
+			let spaceRegex = /\s/gi;
+			console.log("urlQuery in the beginning: " + urlQuery);
+			urlQuery = urlQuery.replace(spaceRegex, urlSpaceReplacer);
+			console.log("urlQuery: " + urlQuery);
+
+			let urlForLink = "https://en.wikipedia.org/wiki/" + urlQuery;
+
 			let resultsBox = $('#results');
 			let container = $('<div></div>').addClass('entry');
-			let link = $('<a></a>').addClass('res-link');
+			let link = $('<a></a>').addClass('res-link').attr("href", urlForLink);
 			let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
 			let resText = $('<p></p>').addClass('res-info').html(result.snippet);
 			console.log(result.snippet);
@@ -46,9 +62,10 @@ $(document).ready(function(){
 	urlStart = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=",
 	urlEnd = "&format=json&callback=handleJSONP";
 
-
-
 	$searchButton.on('click', function(){
+		// delete the previous results
+		$('.entry').remove();
+
 		console.log("Click event happened on the main button.");
 		let searchText = $searchBox.val();
 		let requestedURL = urlStart + searchText + urlEnd;

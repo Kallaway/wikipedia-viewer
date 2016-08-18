@@ -17,6 +17,10 @@ body {
     min-width: 330px;
 }
 
+a {
+	color: $green-sheen;
+}
+
 /******* MAIN STYLES *******/
 #app-container {
     background-color: $slate-gray;
