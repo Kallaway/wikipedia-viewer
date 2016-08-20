@@ -17,36 +17,36 @@ function buildResults(data) {
 		return "_";
 	}
 
-	setTimeout(function() {
+
 		data.forEach(function(result) {
+			setTimeout(function() {
+				console.log(result);
 
-			console.log(result);
+				let urlQuery = result.title;
+				let spaceRegex = /\s/gi;
+				console.log("urlQuery in the beginning: " + urlQuery);
+				urlQuery = urlQuery.replace(spaceRegex, urlSpaceReplacer);
+				console.log("urlQuery: " + urlQuery);
 
-			let urlQuery = result.title;
-			let spaceRegex = /\s/gi;
-			console.log("urlQuery in the beginning: " + urlQuery);
-			urlQuery = urlQuery.replace(spaceRegex, urlSpaceReplacer);
-			console.log("urlQuery: " + urlQuery);
+				let urlForLink = "https://en.wikipedia.org/wiki/" + urlQuery;
 
-			let urlForLink = "https://en.wikipedia.org/wiki/" + urlQuery;
+				let resultsBox = $('#results');
+				let container = $('<div></div>').addClass('entry');
+				let link = $('<a></a>').addClass('res-link').attr("href", urlForLink);
+				let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
+				let resText = $('<p></p>').addClass('res-info').html(result.snippet);
+				console.log(result.snippet);
+				console.log(resText);
 
-			let resultsBox = $('#results');
-			let container = $('<div></div>').addClass('entry');
-			let link = $('<a></a>').addClass('res-link').attr("href", urlForLink);
-			let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
-			let resText = $('<p></p>').addClass('res-info').html(result.snippet);
-			console.log(result.snippet);
-			console.log(resText);
-
-			// let test = $
-			link.append(resTitle);
-			link.append(resText);
-			container.append(link);
-			resultsBox.append(container);
-
+				// let test = $
+				link.append(resTitle);
+				link.append(resText);
+				container.append(link);
+				resultsBox.append(container);
+				}, timeoutIncr);
 			timeoutIncr += 100;
 		});
-	}, timeoutIncr);
+
 
 
 }
