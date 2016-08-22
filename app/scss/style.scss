@@ -22,6 +22,15 @@ a {
 	text-decoration: none;
 }
 
+h1 {
+	margin-bottom: 0.1em;
+}
+
+h2 {
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+}
+
 h3 {
 	margin: 0 5px;
 	margin-top: 10px;
@@ -40,25 +49,29 @@ h3 {
 .search-panel {
     margin: 2% 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    // flex-direction: column;
+    justify-content: center;
+    // align-items: center;
     // color: $light-lime;
     // background-color: $light-brown;
 }
 #search-box {
+	display: flex;
+
+	margin: 0 auto 5%;
     background-color: $umber;
     color: $green-sheen;
-    margin: 0 auto 5%;
     border-radius: 20px;
     font-size: 1.2em;
     text-align: center;
     outline: none;
     border: none;
     padding: 2% 3%;
-	display: flex;
 }
 #search-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
     margin: 5% 0;
     max-width: 50px;
     font-size: 1em;
@@ -67,7 +80,7 @@ h3 {
     color: $green-sheen;
     border-radius: 15px;
     padding: 2% 5%;
-	display: flex;
+	text-align: center;
 }
 #search-button:hover {
     color: $deep-taupe;

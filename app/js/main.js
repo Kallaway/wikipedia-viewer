@@ -1,6 +1,6 @@
 "use strict";
 
-// On focus on search box - empty the input
+// TODO On focus on search box - empty the input
 // Put button on the same line
 // Make results appear one by one
 
@@ -17,7 +17,6 @@ function buildResults(data) {
 		return "_";
 	}
 
-
 		data.forEach(function(result) {
 			setTimeout(function() {
 				console.log(result);
@@ -32,9 +31,12 @@ function buildResults(data) {
 
 				let resultsBox = $('#results');
 				let container = $('<div></div>').addClass('entry');
-				let link = $('<a></a>').addClass('res-link').attr("href", urlForLink);
+				let link = $('<a></a>').addClass('res-link').attr({
+						'href': urlForLink,
+						'target': '_blank'
+					});
 				let resTitle = $('<h3></h3>').addClass('res-title').html(result.title);
-				let resText = $('<p></p>').addClass('res-info').html(result.snippet);
+				let resText = $('<p></p>').addClass('res-info').html(result.snippet + "...");
 				console.log(result.snippet);
 				console.log(resText);
 
@@ -51,8 +53,6 @@ function buildResults(data) {
 
 }
 
-
-
 $(document).ready(function(){
 
 	// constants
@@ -62,8 +62,7 @@ $(document).ready(function(){
 	urlStart = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=",
 	urlEnd = "&format=json&callback=handleJSONP";
 
-	$searchButton.on('click', function(){
-		// delete the previous results
+	function performSearch() {
 		$('.entry').remove();
 
 		console.log("Click event happened on the main button.");
@@ -73,10 +72,18 @@ $(document).ready(function(){
 
 		var script = document.createElement("script");
 		script.src = requestedURL;
-	     // appendChild is calling the function
-	    document.body.appendChild(script);
+		 // appendChild is calling the function
+		document.body.appendChild(script);
+	}
 
+	$searchBox.on('keypress', function(e) {
+		if (e.keyCode === 13) {
+			performSearch();
+		}
+	});
 
+	$searchButton.on('click', function(){
+		performSearch();
 	});
 
 	var test = 3;
