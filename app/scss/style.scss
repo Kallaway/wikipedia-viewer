@@ -46,19 +46,19 @@ h3 {
     flex-direction: column;
     margin-bottom: 5%;
 }
-.search-panel {
+#search-panel {
     margin: 2% 0;
     display: flex;
-    // flex-direction: column;
+    flex-direction: column;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
     // color: $light-lime;
     // background-color: $light-brown;
 }
 #search-box {
 	display: flex;
 
-	margin: 0 auto 5%;
+	margin: 0 auto 1%;
     background-color: $umber;
     color: $green-sheen;
     border-radius: 20px;
@@ -68,18 +68,19 @@ h3 {
     border: none;
     padding: 2% 3%;
 }
-#search-button {
+#search-button,
+#random-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
     margin: 5% 0;
-    max-width: 50px;
+    max-width: 90px;
     font-size: 1em;
     cursor: pointer;
 	background-color: $umber;
     color: $green-sheen;
-    border-radius: 15px;
-    padding: 2% 5%;
+    border-radius: 50px;
+    padding: 3% 6%;
 	text-align: center;
 }
 #search-button:hover {

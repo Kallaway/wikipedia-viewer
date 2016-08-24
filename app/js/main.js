@@ -59,6 +59,7 @@ $(document).ready(function(){
 	const $resultsEl = $('#results'),
 	$searchBox = $('#search-box'),
 	$searchButton = $('#search-button'),
+	$randomButton = $('#random-button'),
 	urlStart = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=",
 	urlEnd = "&format=json&callback=handleJSONP";
 
@@ -85,6 +86,8 @@ $(document).ready(function(){
 	$searchButton.on('click', function(){
 		performSearch();
 	});
+
+	$randomButton
 
 	var test = 3;
 	console.log(test);
