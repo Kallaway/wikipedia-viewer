@@ -1,9 +1,5 @@
 "use strict";
 
-// TODO On focus on search box - empty the input
-// Put button on the same line
-// Make results appear one by one
-
 function handleJSONP(data) {
 	let results = data.query.search;
 	buildResults(results);
@@ -40,7 +36,6 @@ function buildResults(data) {
 				console.log(result.snippet);
 				console.log(resText);
 
-				// let test = $
 				link.append(resTitle);
 				link.append(resText);
 				container.append(link);
@@ -48,8 +43,6 @@ function buildResults(data) {
 				}, timeoutIncr);
 			timeoutIncr += 100;
 		});
-
-
 
 }
 
@@ -65,6 +58,7 @@ $(document).ready(function(){
 
 	function performSearch() {
 		$('.entry').remove();
+		$('#search-helper').remove(); // cleanup
 
 		console.log("Click event happened on the main button.");
 		let searchText = $searchBox.val();
@@ -73,7 +67,8 @@ $(document).ready(function(){
 
 		var script = document.createElement("script");
 		script.src = requestedURL;
-		 // appendChild is calling the function
+		script.id = "search-helper";
+		// appendChild is calling the function
 		document.body.appendChild(script);
 	}
 

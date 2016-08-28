@@ -1,13 +1,4 @@
 /******** BASE STYLES *******/
-
-// increase space between items
-/*
-#F1F2EE ISABELLINE
-#BFB7B6 BLACK SHADOWS
-#DCF763 BOOGER BUSTER
-#435058 OUTER SPACE
-#848C8E ROMAN SILVER
-*/
 $black-shadows: #BFB7B6;
 $outer-space: #435058;
 $slate-gray: #6C809A;
@@ -18,7 +9,7 @@ $font-stack: 'Source Sans Pro', Helvetica, sans-serif;
 $main-font-size: 1.2em;
 
 body {
-    background-color: $roman-silver;
+    background-color: $slate-gray;
     color: $outer-space;
     font-size: $main-font-size;
     display: flex;
@@ -34,6 +25,7 @@ a {
 
 h1 {
 	margin-bottom: 0.1em;
+	margin-top: 0.1em;
 }
 
 h2 {
@@ -48,7 +40,6 @@ h3 {
 
 /******* MAIN STYLES *******/
 #app-container {
-    background-color: $slate-gray;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -62,8 +53,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // color: $light-lime;
-    // background-color: $light-brown;
 }
 #search-box {
 	display: flex;
@@ -78,8 +67,7 @@ h3 {
     border: none;
     padding: 2% 3%;
 }
-#search-button,
-#random-button {
+#search-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -93,13 +81,18 @@ h3 {
     padding: 3% 6%;
 	text-align: center;
 }
+
+#random-button:hover {
+	color: $booger-buster;
+}
+
 #search-button:hover {
     color: $roman-silver;
 }
 
 .entry {
 	display: flex;
-	// flex-direction:
+	background-color: $isabelline;
 	align-items: center;
 	flex-direction: row;
 	justify-content: center;
@@ -111,7 +104,7 @@ h3 {
 }
 
 .entry:hover {
-	border-left: 1em solid $booger-buster;
+	background-color: $booger-buster;
 }
 
 .res-link {
@@ -122,26 +115,11 @@ h3 {
 }
 
 .res-title {
-	color: $black-shadows;
+	color: $slate-gray;
 }
-
-.res-info {
-
-}
-
-
 
 
 /******* PSEUDO STYLES *******/
-
-
-
-
-
-
-
-
-
 
 
 /******* MEDIA QUERIES *******/
